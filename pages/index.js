@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import { useState, useEffect } from "react";
 
 const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
@@ -32,7 +32,7 @@ const [pageIsMounted, setPageIsMounted] = useState(false);
       </Head>
 
       <main className={styles.main}>
-        <div id="my-map" style={{width:'100%', height: 500}}/>
+        <div id="my-map" className={styles.mymap}/>
       </main>
     </div>
   );
