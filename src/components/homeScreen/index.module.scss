@@ -1,0 +1,83 @@
+.container {
+  background-color: rgba(#063b79, 0.35);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  color: #fff;
+  padding: 130px 50px;
+  font-family: "SourceSansPro";
+
+  .button {
+    cursor: pointer;
+    border: solid 3px #fff;
+    border-radius: 40px;
+    padding: 15px 20px;
+    width: 35%;
+    text-align: center;
+    margin: 100px auto 0 auto;
+
+    .textButton {
+      font-size: 22px;
+    }
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 54px;
+  }
+
+  .text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.hide {
+    background-color: rgba(#063b79, 0.35);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    color: #fff;
+    padding: 130px 50px;
+    font-family: "SourceSansPro";
+    animation: hideHomeScreen 800ms ease-out forwards;
+    .button {
+        cursor: pointer;
+        border: solid 3px #fff;
+        border-radius: 40px;
+        padding: 15px 20px;
+        width: 35%;
+        text-align: center;
+        margin: 100px auto 0 auto;
+    
+        .textButton {
+          font-size: 22px;
+        }
+      }
+    
+      .title {
+        font-weight: 700;
+        font-size: 54px;
+      }
+    
+      .text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+      }
+}
+
+@keyframes hideHomeScreen {
+  0% {
+    opacity: 1;
+    top:0vh;
+  }
+
+  100% {
+    opacity: 0;
+    top:-100vh;
+  }
+}

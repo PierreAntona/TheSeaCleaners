@@ -1,0 +1,61 @@
+.container {
+  z-index: 20;
+  position: absolute;
+  color: #fff;
+  padding: 30px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  .logo {
+    width: 120px;
+  }
+  .rightPart {
+    display: flex;
+    align-items: flex-start;
+
+    .button {
+      margin-right: 40px;
+      background-color: #fff;
+      color: #063B79;
+      border-radius: 20px;
+      padding: 10px 25px;
+      font-family: "sourceSansPro";
+      font-weight: 400;
+    }
+
+    .socialsAndLang {
+      display: flex;
+      flex-direction: column;
+    .socials {
+      display: flex;
+      margin-bottom: 30px;
+
+      .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 15px;
+
+        .icon {
+          width: 25px;
+        }
+      }
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      .flag {
+        width: 20px;
+        height: 100%;
+        margin: 0 5px;
+      }
+      .switch {
+          margin: 0 10px;
+          width: 40px;
+          cursor: pointer;
+      }
+    }
+  }}
+}

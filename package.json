@@ -9,13 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.7.0",
+    "mini-signals": "^1.2.0",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.49.8"
   },
   "devDependencies": {
+    "@types/mapbox-gl": "^2.6.1",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0"
   }

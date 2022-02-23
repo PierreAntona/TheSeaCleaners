@@ -1,0 +1,52 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("./fonts/SourceSansPro-Regular.ttf");
+}
+
+#marker1 {
+  background-image: url('../../public/event.svg');
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+
+#marker2 {
+  background-image: url('../../public/plage.svg');
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+
+#marker3 {
+  background-image: url('../../public/plastique.svg');
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+   
+.mapboxgl-popup {
+  max-width: 800px;
+  }
