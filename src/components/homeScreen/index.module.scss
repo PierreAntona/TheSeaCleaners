@@ -5,17 +5,22 @@
   height: 100vh;
   z-index: 10;
   color: #fff;
-  padding: 130px 50px;
+  padding: 20vh 50px;
   font-family: "SourceSansPro";
 
   .button {
+    position: fixed;
+    bottom: 18vh;
+    left: 50%;
     cursor: pointer;
     border: solid 3px #fff;
     border-radius: 40px;
     padding: 15px 20px;
     width: 35%;
     text-align: center;
-    margin: 100px auto 0 auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 
     .textButton {
       font-size: 22px;
@@ -24,13 +29,14 @@
 
   .title {
     font-weight: 700;
-    font-size: 54px;
+    font-size: 4vw;
   }
 
   .text {
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.5vw;
+    line-height: 1.2em;
+    width: 72%;
   }
 }
 
@@ -41,33 +47,39 @@
     height: 100vh;
     z-index: 10;
     color: #fff;
-    padding: 130px 50px;
+    padding: 20vh 50px;
     font-family: "SourceSansPro";
     animation: hideHomeScreen 800ms ease-out forwards;
     .button {
-        cursor: pointer;
-        border: solid 3px #fff;
-        border-radius: 40px;
-        padding: 15px 20px;
-        width: 35%;
-        text-align: center;
-        margin: 100px auto 0 auto;
-    
-        .textButton {
-          font-size: 22px;
-        }
+      position: fixed;
+      bottom: 18vh;
+      left: 50%;
+      cursor: pointer;
+      border: solid 3px #fff;
+      border-radius: 40px;
+      padding: 15px 20px;
+      width: 35%;
+      text-align: center;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+  
+      .textButton {
+        font-size: 22px;
       }
-    
-      .title {
-        font-weight: 700;
-        font-size: 54px;
-      }
-    
-      .text {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
-      }
+    }
+  
+    .title {
+      font-weight: 700;
+      font-size: 4vw;
+    }
+  
+    .text {
+      font-weight: 400;
+      font-size: 1.5vw;
+      line-height: 1.2em;
+      width: 72%;
+    }
 }
 
 @keyframes hideHomeScreen {

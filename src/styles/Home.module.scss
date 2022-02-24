@@ -4,11 +4,122 @@
   .main {
     min-height: 100vh;
     padding: 0 0;
-    
+
     .mymap {
       width: 100vw;
       height: 100vh;
     }
   }
-}
 
+  .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(6, 59, 121);
+    background-color: rgba(6, 59, 121, 0.35);
+    border-radius: 10px;
+  }
+
+  .modalcontent {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    max-width: 665px;
+
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+  }
+
+  .modalimage {
+    border-radius: 5px;
+  }
+
+  .close {
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .categorie {
+    color: #00bbaf;
+    font-family: "SourceSansPro";
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 6px;
+  }
+
+  .categorieplage {
+    color: #ed4f45;
+    font-family: "SourceSansPro";
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 6px;
+  }
+
+  .categorieevent {
+    color: #ffaa3c;
+    font-family: "SourceSansPro";
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 6px;
+  }
+
+  .info {
+    font-family: "SourceSansPro";
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 7px;
+    margin-bottom: 5px;
+  }
+  .infoimage {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 13px;
+    margin-bottom: 6px;
+  }
+  .content {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 44px;
+    font-weight: bolder;
+    font-family: "SourceSansPro";
+    margin: 0;
+  }
+
+  .textcard {
+    font-size: 11px;
+    font-family: "SourceSansPro";
+  }
+
+  p {
+    font-size: 14px;
+    font-family: "SourceSansPro";
+  }
+}
