@@ -1,3 +1,9 @@
+@mixin mobile {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
 .container {
   background-color: rgba(#063b79, 0.35);
   position: absolute;
@@ -5,12 +11,16 @@
   height: 100vh;
   z-index: 10;
   color: #fff;
-  padding: 20vh 50px;
+  padding: 20vh 50px 0px 50px;
   font-family: "SourceSansPro";
+
+  @include mobile {
+    padding: 15vh 50px 0 50px;
+  }
 
   .button {
     position: fixed;
-    bottom: 18vh;
+    bottom: 20vh;
     left: 50%;
     cursor: pointer;
     border: solid 3px #fff;
@@ -22,14 +32,63 @@
     right: 0;
     margin: 0 auto;
 
+    @include mobile {
+      width: 55%;
+    }
+
     .textButton {
       font-size: 22px;
+    }
+  }
+
+  .buttonForm {
+    position: fixed;
+    bottom: 7vh;
+    left: 50%;
+    cursor: pointer;
+    border: solid 3px #fff;
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 15px 25px;
+    width: 20%;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    .textButton {
+      font-size: 18px;
+      color: #063b79;
+    }
+    @include mobile {
+      bottom: 10vh;
+      width: 65%;
+    }
+
+    .textButton {
+      font-size: 22px;
+    }
+  }
+
+  .logo {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      margin: 0 auto;
     }
   }
 
   .title {
     font-weight: 700;
     font-size: 4vw;
+
+    @include mobile {
+      text-align: center;
+      font-size: 12vw;
+      margin: 10px 0;
+      line-height: 50px;
+    }
   }
 
   .text {
@@ -37,6 +96,13 @@
     font-size: 1.5vw;
     line-height: 1.2em;
     width: 72%;
+
+    @include mobile {
+      line-height: 1.2em;
+      font-size: 3vw;
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
@@ -50,9 +116,10 @@
     padding: 20vh 50px;
     font-family: "SourceSansPro";
     animation: hideHomeScreen 800ms ease-out forwards;
+    
     .button {
       position: fixed;
-      bottom: 18vh;
+      bottom: 20vh;
       left: 50%;
       cursor: pointer;
       border: solid 3px #fff;
@@ -64,21 +131,79 @@
       right: 0;
       margin: 0 auto;
   
+      @include mobile {
+        width: 55%;
+      }
+  
       .textButton {
         font-size: 22px;
+      }
+    }
+
+    .buttonForm {
+      position: fixed;
+      bottom: 7vh;
+      left: 50%;
+      cursor: pointer;
+      border: solid 3px #fff;
+      background-color: #fff;
+      border-radius: 40px;
+      padding: 15px 20px;
+      width: 15%;
+      text-align: center;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+  
+      .textButton {
+        font-size: 18px;
+        color: #063b79;
+      }
+
+      @include mobile {
+        bottom: 10vh;
+        width: 65%;
+      }
+  
+      .textButton {
+        font-size: 22px;
+      }
+    }
+  
+    .logo {
+      display: none;
+  
+      @include mobile {
+        display: flex;
+        margin: 0 auto;
       }
     }
   
     .title {
       font-weight: 700;
       font-size: 4vw;
-    }
   
+      @include mobile {
+        text-align: center;
+        font-size: 12vw;
+        line-height: 20px;
+        margin: 10px 0;
+        line-height: 50px;
+      }
+    }
+
     .text {
       font-weight: 400;
       font-size: 1.5vw;
       line-height: 1.2em;
       width: 72%;
+  
+      @include mobile {
+        line-height: 1.2em;
+        font-size: 3vw;
+        width: 100%;
+        text-align: center;
+      }
     }
 }
 

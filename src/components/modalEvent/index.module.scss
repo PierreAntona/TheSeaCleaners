@@ -1,0 +1,86 @@
+.container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(6, 59, 121);
+    background-color: rgba(6, 59, 121, 0.35);
+    border-radius: 10px;
+    font-family: "SourceSansPro";
+    cursor: pointer;
+
+    
+  .modalcontent {
+    background-color: #fefefe;
+    padding: 20px;
+    max-width: 665px;
+    cursor: initial;
+
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+  }
+
+  .modalimage {
+    border-radius: 5px;
+  }
+
+  .cat {
+    color: #FFAA3C;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 6px;
+  }
+
+  .info {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .infoimage {
+    width: 25px;
+    margin-right: 5px;
+  }
+
+  .circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ED4F45;
+    
+    margin: 0 5px 0 4px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 13px;
+    margin-bottom: 6px;
+  }
+  .content {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 44px;
+    font-weight: bolder;
+    margin: 0;
+  }
+
+  .textcard {
+    font-size: 11px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

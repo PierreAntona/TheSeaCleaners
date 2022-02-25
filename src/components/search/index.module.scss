@@ -1,3 +1,9 @@
+@mixin mobile {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -5,19 +11,62 @@
     left: 50px;
     top: 150px;
 
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      left: 8vw;
+    }
+
     .search {
       width: 450px;
       padding: 11px 20px;
       margin-right: 20px;
       border-radius: 20px;
       border: none;
+
+      @include mobile {
+        width: 84vw;
+        margin-right: 0px;
+      }
     }
 
-    .filter {
+    .filters {
+      display: flex;
+
+      @include mobile {
+        margin-top: 15px;
+        justify-content: space-between;
+        align-self: normal;
+      }
+
+      .filter {
+        margin-right: 20px;
+        border: solid 1px #fff;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        
+        @include mobile {
+          padding: 8px 20px;
+          font-size: 13px;
+          margin: 0;
+        }
+      }
+    }
+
+    .active {
+      color: #FFF;
       margin-right: 20px;
-      border: solid 1px #fff;
+      background-color: #42A2DE;
+      border: solid 1px #42A2DE;
       padding: 8px 20px;
       border-radius: 20px;
       cursor: pointer;
+
+      @include mobile {
+        padding: 8px 20px;
+        font-size: 13px;
+        margin: 0;
+      }
     }
   }

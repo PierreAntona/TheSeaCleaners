@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import MyHeader from "../components/header";
 import HomeScreen from "../components/homeScreen";
 import HUD from "../components/hud";
-import { showInfo } from "../components/signals";
+import { showInfo, signalModal, signalModalPlage } from "../components/signals";
+import ModalPlage from "../components/modalPlage";
+import ModalEvent from "../components/modalEvent";
 const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 mapboxgl.accessToken =
@@ -23,14 +25,29 @@ export default function Home() {
     setShowModalEvent(false);
   }
 
+  const showPlage = () => {
+    setShowModalPlage(true);
+  }
+  const showEvent = () => {
+    setShowModalEvent(true);
+  }
+  const showPlastique = () => {
+    setShowModalPlastique(true);
+  }
+
   const refresh = () => {
     setShowHUD(true);
   }
 
   useEffect(() => {
     const showHUD = showInfo.add(refresh);
+    const showMyModal = signalModal.add(hideScreen);
+    const showMyModalPlage = signalModalPlage.add(showPlage);
+
     return () => {
       showInfo.detach(showHUD);
+      signalModal.detach(showMyModal);
+      signalModalPlage.detach(showMyModalPlage);
     };
   });
 
@@ -110,46 +127,14 @@ export default function Home() {
       <main className={styles.main}>
         <HomeScreen />
         {showHUD ? <HUD/> : null}
-        <showModalPlage>
-            {showModalPlage ?
-              <div className={styles.modal}>
-                <div className={styles.modalcontent} >
-                  <span className={styles.close} onClick={hideScreen}>&times;</span>
+        {showModalPlage ? <ModalPlage/> : null}
+        {showModalEvent ? <ModalEvent/> : null}
 
-                  <img className={styles.modalimage} src="../images/Plage.jpeg" width="622" height="223" />
-
-                  <p className={styles.categorieplage}>Plage</p>
-
-                  <h2>Plage du Fortin</h2>
-
-                  <p className={styles.info}>
-                    <img className={styles.infoimage} width="16" src="../images/plage.svg"></img>
-                    Taux de pollution moyen
-                  </p>
-
-                  <p className={styles.info}>
-                    <img className={styles.infoimage} src="../images/Icon.svg"></img>
-                    Rte du Rove, 13016 Marseille
-                  </p>
-
-                  <p className={styles.subtitle}>
-                    Description
-                  </p>
-
-                  <p className={styles.content}>
-                  La plage du Fortin, à Marseille, est une belle plage où le sable fin est parsemé de galets et l'eau turquoise, publique et surveillée. C'est un lieu avec énormement de petits déchets plastiques laissés par les habitants ou touristes. La pollution plastique aura bientôt raison du Grand Bleu, il est encore temps de prendre conscience du mal que nous faisons à ces êtres silencieux qui peuplent les Océans.
-                  </p>
-
-                </div>
-              </div>
-              : null}
-
-          </showModalPlage>
 
           <showModalPlastique>
             {showModalPlastique ?
 
-<div className={styles.modal}>
+            <div className={styles.modal}>
                 <div className={styles.modalcontent} >
                   <span className={styles.close} onClick={hideScreen}>&times;</span>
 
@@ -183,44 +168,7 @@ export default function Home() {
               : null}
 
           </showModalPlastique>
-
-          <showModalEvent>
-            {showModalEvent ?
-
-              <div className={styles.modal}>
-                <div className={styles.modalcontent} >
-                  <span className={styles.close} onClick={hideScreen}>&times;</span>
-
-                  <img className={styles.modalimage} src="../images/Evenement.jpg" width="622" height="223" />
-
-                  <p className={styles.categorieevent}>Evènement</p>
-
-                  <h2>Clean Up journée mondiale du nettoyage</h2>
-
-                  {/* <p className={styles.info}>
-                    <img className={styles.infoimage} src="../images/Sablier.svg"></img>
-                    450 ans
-                  </p> */}
-
-                  <p className={styles.info}>
-                    <img className={styles.infoimage} src="../images/Icon.svg"></img>
-                    Paris
-                  </p>
-
-                  <p className={styles.subtitle}>
-                    Description
-                  </p>
-
-                  <p className={styles.content}>
-                  Rejoins nous pour participer à un clean up grandeur nature dans les rues de Paris pour la journée internationale du nettoyage. Ca sera l’occasion de se retrouver pour une cause commune. Enfile tes gants et rendez vous le 17 septembre 2022. 
-
-                  </p>
-
-                </div>
-              </div>
-              : null}
-
-          </showModalEvent>
+          
         <div id="my-map" className={styles.mymap} />
       </main>
     </div>

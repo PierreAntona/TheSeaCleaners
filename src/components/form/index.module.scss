@@ -1,0 +1,137 @@
+@mixin mobile {
+    @media screen and (max-width: 750px) {
+      @content;
+    }
+  }
+
+.container {
+    background-color: rgba(#063b79, 0.35);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    padding: 150px 50px 50px 50px;
+    top: 0;
+    left:0;
+    z-index: 10;
+    color: #000;
+    font-family: "SourceSansPro";
+    overflow: auto;
+
+    .text_white{
+        color: #fff;
+    }
+
+    @include mobile {
+        padding: 150px 30px 30px 30px;
+    }
+
+    h1 {
+        font-size: 54px;
+        margin: 0;
+
+        @include mobile {
+            font-size: 34px;
+            margin-top: 20px;
+        }
+    }
+
+    p {
+        font-size: 1.5vw;
+        margin: 20px 0 40px 0;
+
+        @include mobile {
+            font-size: 24px;
+        }
+    }
+
+    .retour {
+        display: flex;
+        align-items: center;
+        color: #FFF;
+        cursor: pointer;
+
+        .chevron {
+            margin-right: 10px;
+        }
+    }
+
+    form {
+        background-color: #fff;
+        padding: 40px;
+        width: 979px;
+        border-radius: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        margin: auto;
+        grid-template-areas:
+          ". .";
+
+        @include mobile {
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .input_type {
+        width: 660px;
+        height: 49px;
+        padding-left: 20px;
+        border-radius: 25px;
+        border: none;
+        margin-top: 5px;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+
+        @include mobile {
+            width: 100%;    
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .button_type {
+        background-color: #fff;
+        padding: 20px 20px;
+        width: 291px;
+        height: 49px;
+        border-radius: 50px;
+        border: none;
+        color: #063b79;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .center {
+        place-self: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .columnTwo {
+        text-align: center;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    .input_download {
+        margin: auto;
+        height: 150px;
+        width: 150px;
+        border-radius: 20px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+}

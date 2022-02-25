@@ -21,37 +21,41 @@ a {
 }
 
 #marker1 {
-  background-image: url('../../public/event.svg');
+  background-image: url("../../public/event.svg");
   background-size: cover;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
-  }
+}
 
 #marker2 {
-  background-image: url('../../public/plage.svg');
+  background-image: url("../../public/plage.svg");
   background-size: cover;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
-  }
+}
 
 #marker3 {
-  background-image: url('../../public/plastique.svg');
+  background-image: url("../../public/plastique.svg");
   background-size: cover;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
-  }
+}
 
 .mapboxgl-popup {
-    max-width: 800px;
-    height: 1900px;
+  max-width: 800px;
+  height: 1900px;
 }
-   
-.slick-list {margin: 0 -10px;}
 
-.slick-slide>div {padding: 0 10px;}
+.slick-list {
+  margin: 0 -10px;
+}
+
+.slick-slide > div {
+  padding: 0 10px;
+}

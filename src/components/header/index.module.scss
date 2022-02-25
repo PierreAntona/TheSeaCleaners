@@ -1,3 +1,9 @@
+@mixin mobile {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
 .container {
   z-index: 20;
   position: absolute;
@@ -7,12 +13,25 @@
   align-items: center;
   justify-content: space-between;
   width: 100vw;
+
+  @include mobile {
+    padding: 30px;
+  }
+
   .logo {
     width: 120px;
+    @include mobile {
+      display: none;
+    }
   }
   .rightPart {
     display: flex;
     align-items: flex-start;
+
+    @include mobile {
+      width: 100%;
+      justify-content: space-between;
+    }
 
     .button {
       margin-right: 40px;
@@ -22,6 +41,12 @@
       padding: 10px 25px;
       font-family: "sourceSansPro";
       font-weight: 400;
+
+      @include mobile {
+        font-size: 12px;
+        margin: 0;
+        padding: 10px 15px;
+      }
     }
 
     .socialsAndLang {

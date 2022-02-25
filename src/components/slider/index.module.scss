@@ -1,8 +1,20 @@
+@mixin mobile {
+    @media screen and (max-width: 750px) {
+      @content;
+    }
+  }
+
 .container {
     position: fixed;
     bottom: 30px;
     right: -20vw;
     width: 70vw;
+
+    @include mobile {
+        right: 0;
+        left: 0;
+        width: 240vw;
+    }
 
     .card {
         background-color: #FFF;
@@ -12,6 +24,7 @@
         color: #000;
         display: flex!important;
         font-family: 'SourceSansPro';
+        cursor: pointer;
 
         .image {
             width: 125px;
@@ -69,7 +82,10 @@
             }
 
             .info {
-                margin-top: 10px;
+                margin-top: 10px;    
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .location {
