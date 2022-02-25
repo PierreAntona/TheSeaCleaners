@@ -13,7 +13,7 @@ export default function ModalEvent() {
     <div className={styles.modalcontent}>
       <img
         className={styles.modalimage}
-        src="../../Plage.jpeg"
+        src="../../event.png"
         width="622"
         height="223"
       />

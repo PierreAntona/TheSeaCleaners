@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { signalModalPlage } from "../signals";
+import { signalModalPlage, signalModalEvent, signalModalPlastique } from "../signals";
 
 export default function MySlider() {
 
@@ -13,11 +13,19 @@ export default function MySlider() {
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: null,
-    prevArrow: null
+    prevArrow: null,
   };
 
   const showPlage = () => {
     signalModalPlage.dispatch()
+  }
+
+  const showEvent = () => {
+    signalModalEvent.dispatch()
+  }
+
+  const showPlastique = () => {
+    signalModalPlastique.dispatch()
   }
 
   return (
@@ -38,48 +46,48 @@ export default function MySlider() {
             </div>
           </div>
         </div>
-        <div className={styles.card}>
-          <img className={styles.image} src="../../bouteille.png" />
+        <div className={styles.card} onClick={showEvent}>
+          <img className={styles.image} src="../../cleanup.png" />
+          <div className={styles.data}>
+            <span className={styles.event}>Evènement</span>
+            <span className={styles.name}>Clean Up journée mondiale du nettoyage</span>
+            <div className={styles.location} >
+              <img src="../../location.png" className={styles.icon}/>
+              <span>Paris</span>
+            </div>
+            <div className={styles.info}>
+              <img src="../../calendar.png" className={styles.icon}/>
+              <span>14/03/1022</span>
+            </div>
+          </div>
+        </div>
+        <div className={styles.card} onClick={showPlastique}>
+          <img className={styles.image} src="../../bouteille.png"/>
           <div className={styles.data}>
             <span className={styles.plastique}>Plastique</span>
-            <span className={styles.name}>Bouteilles d'eau en plastique</span>
+            <span className={styles.name}>Bouteilles d’eau en plastique</span>
             <div className={styles.info}>
               <img src="../../sablier.png" className={styles.icon}/>
               <span>450 ans</span>
             </div>
             <div className={styles.location} >
               <img src="../../location.png" className={styles.icon}/>
-              <span>Cholet</span>
+              <span>Saint-Malo</span>
             </div>
           </div>
         </div>
-        <div className={styles.card}>
+        <div className={styles.card} onClick={showEvent}>
           <img className={styles.image} src="../../cleanup.png" />
           <div className={styles.data}>
             <span className={styles.event}>Evènement</span>
-            <span className={styles.name}>Clean Up</span>
+            <span className={styles.name}>Clean Up journée mondiale du nettoyage</span>
+            <div className={styles.location} >
+              <img src="../../location.png" className={styles.icon}/>
+              <span>Paris</span>
+            </div>
             <div className={styles.info}>
               <img src="../../calendar.png" className={styles.icon}/>
-              <span>14/03/2022</span>
-            </div>
-            <div className={styles.location} >
-              <img src="../../location.png" className={styles.icon}/>
-              <span>Saint Malo</span>
-            </div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <img className={styles.image} src="../../gobelet.png" />
-          <div className={styles.data}>
-            <span className={styles.plastique}>Plastique</span>
-            <span className={styles.name}>Gobelets</span>
-            <div className={styles.info}>
-              <img src="../../sablier.png" className={styles.icon}/>
-              <span>500 ans</span>
-            </div>
-            <div className={styles.location} >
-              <img src="../../location.png" className={styles.icon}/>
-              <span>Lille</span>
+              <span>14/03/1022</span>
             </div>
           </div>
         </div>

@@ -21,15 +21,6 @@ a {
 }
 
 #marker1 {
-  background-image: url("../../public/event.svg");
-  background-size: cover;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#marker2 {
   background-image: url("../../public/plage.svg");
   background-size: cover;
   width: 20px;
@@ -38,8 +29,17 @@ a {
   cursor: pointer;
 }
 
+#marker2 {
+  background-image: url("../../public/Plastique.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 #marker3 {
-  background-image: url("../../public/plastique.svg");
+  background-image: url("../../public/Event.svg");
   background-size: cover;
   width: 20px;
   height: 20px;

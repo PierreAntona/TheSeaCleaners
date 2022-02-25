@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import MyHeader from "../components/header";
 import HomeScreen from "../components/homeScreen";
 import HUD from "../components/hud";
-import { showInfo, signalModal, signalModalPlage } from "../components/signals";
+import { showInfo, signalModal, signalModalPlage, signalModalEvent, signalModalPlastique } from "../components/signals";
 import ModalPlage from "../components/modalPlage";
 import ModalEvent from "../components/modalEvent";
+import ModalPlastique from "../components/modalPlastique";
 const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 mapboxgl.accessToken =
@@ -43,11 +44,15 @@ export default function Home() {
     const showHUD = showInfo.add(refresh);
     const showMyModal = signalModal.add(hideScreen);
     const showMyModalPlage = signalModalPlage.add(showPlage);
+    const showMyModalEvent = signalModalEvent.add(showEvent);
+    const showMyModalPlastique = signalModalPlastique.add(showPlastique);
 
     return () => {
       showInfo.detach(showHUD);
       signalModal.detach(showMyModal);
       signalModalPlage.detach(showMyModalPlage);
+      signalModalEvent.detach(showMyModalEvent);
+      signalModalPlastique.detach(showMyModalPlastique);
     };
   });
 
@@ -55,13 +60,13 @@ export default function Home() {
     setPageIsMounted(true);
 
     const plage1 =  [5.3646797, 43.2986828];
-    const plage2 = [12.554729, 55.70651];
-    const plage3 = [ 2.349014, 48.864716];
+    const plage2 = [-2.030830, 48.668452];
+    const plage3 = [2.346702, 48.863695];
 
     const map = new mapboxgl.Map({
       container: "my-map",
       style: "mapbox://styles/pierreantona/ckzwt8772000514pbxx4nxm3f",
-      center: plage1,
+      center: plage3,
       zoom: 4,
     });
 
@@ -129,45 +134,7 @@ export default function Home() {
         {showHUD ? <HUD/> : null}
         {showModalPlage ? <ModalPlage/> : null}
         {showModalEvent ? <ModalEvent/> : null}
-
-
-          <showModalPlastique>
-            {showModalPlastique ?
-
-            <div className={styles.modal}>
-                <div className={styles.modalcontent} >
-                  <span className={styles.close} onClick={hideScreen}>&times;</span>
-
-                  <img className={styles.modalimage} src="../images/Plastique.jpg" width="622" height="223" />
-
-                  <p className={styles.categorie}>Plastique</p>
-
-                  <h2>Bouteille en plastique</h2>
-
-                  <p className={styles.info}>
-                    <img className={styles.infoimage} src="../images/Sablier.svg"></img>
-                    450 ans
-                  </p>
-
-                  <p className={styles.info}>
-                    <img className={styles.infoimage} src="../images/Icon.svg"></img>
-                    Paris
-                  </p>
-
-                  <p className={styles.subtitle}>
-                    Description
-                  </p>
-
-                  <p className={styles.content}>
-                    Des tonnes de déchets plastiques issus des rues de Jakarta sont emportées par les pluies en mer et flottent parfois jusqu'aux plages de Bali ou jusqu'à l'océan Indien. Forte d'une population de près de 270 millions d'habitants, l'Indonésie est le deuxième contributeur au monde, derrière la Chine, à ces amas de plastiques qui polluent les océans.
-                  </p>
-
-                </div>
-              </div>
-
-              : null}
-
-          </showModalPlastique>
+        {showModalPlastique ? <ModalPlastique/> : null}
           
         <div id="my-map" className={styles.mymap} />
       </main>

@@ -12,7 +12,7 @@ export default function Legend() {
         Évènements
       </div>
       <div className={styles.item}>
-        <img src="../../plastique.svg" className={styles.marker} />
+        <img src="../../Plastique.svg" className={styles.marker} />
         Caractéristiques plastique
       </div>
     </div>
