@@ -23,7 +23,7 @@ export default function MyHeader() {
               <img src="../../instagram.png" className={styles.icon} />
             </a>
             <a href="" className={styles.social}>
-              <img src="../../twitter.png" className={styles.icon} />
+              <img src="../../youtube.png" className={styles.icon && styles.youtube} />
             </a>
           </div>
           <div className={styles.language}>
